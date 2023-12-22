@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>반복문 안에서 클로저 만들기</title>
+    <script>
+      
+        window.onload = function(){
+            var elm = document.getElementsByTagName("input");
+             /* 
+            for(var i=0; i<elm.length; i++){
+                elm[i].onclick = function(){
+                    console.log(i);
+                };
+            }
+            */
+           /*
+            for(var i=0; i<elm.length; i++)(function(_i){
+	        elm[_i].onclick = function(){
+		        console.log(_i);
+	            };
+            })(i);
+        */
+            for(let i=0; i<elm.length; i++){
+	            elm[i].onclick = function(){
+		            console.log(i);
+	            };
+            }
+        };
+    </script>
+</head>
+<body>
+    <input type="button" value="0">
+    <input type="button" value="1">
+    <input type="button" value="2">
+</body>
+</html>
